@@ -1,0 +1,36 @@
+15.3. Állatfarm
+Szükséges fájlok: Allat.java, HaziAllat.java, Tigris.java, Kutya.java, Szamar.java (Letöltés)
+Feladat típusa: Egyéni feladat
+
+Írjunk Allat osztályt, amelynek van egy int kor adattagja, ami azt tárolja, hogy hány éves az állat. Valamint van még String hang() és String bemutatkozas() metódusa, melyek rendre azt adják vissza, hogy "milyen hangot?" és "milyen állat?"
+
+(Minden osztálynak van minden adattagot beállító konstruktora, gettere, settere minden adattagra, az adattagok ahol lehet, private-ok, ahol nem, ott protected-ek).
+
+Írjunk HaziAllat osztályt, ami az Allat leszármazottja. Új adattag a String nev, ami az állat nevét tárolja, új metódusa nincs (a getteren és setteren kívül), az ősmetódusokon nem változtat. A konstruktora név-kor sorrendű.
+
+Írjunk Tigris osztályt, ami az Allat leszármazottja. Az örökölt dolgokon kívül van egy void megol(Allat preda) metódusa, mely a következőt írja a képernyőre: "A(z) 3 éves tigris megölte Samantha, a(z) 1 éves nem makacs szamár-t", amiből a "Samantha, a(z) 1 éves nem makacs szamár" a kapott Szamar objektum bemutatkozas() metódusának eredménye. A String hang() metódus "Grrr" értékkel tér vissza, a String bemutatkozas() eredménye: "3 éves tigris", ahol a 3 a kor adattag értéke.
+
+Írjunk Kutya osztályt, ami a HaziAllat leszármazottja. Van egy int elkergetettPostas adattagja, van void megol(Allat preda) metódusa, mely a tigriséhez hasonlóan működik (kiírja, hogy "A(z) Blöki kutya (3 éves, 12 elkergetett postás) megölte Samantha, a(z) 1 éves nem makacs szamár-t" A String hang() metódus "Vau" értékkel tér vissza, a String bemutatkozas() eredménye: "Blöki kutya (3 éves, 12 elkergetett postás)", ahol a Blöki a nev, 3 a kor, 12 az elkergetettPostas adattag értéke. A konstruktora név-kor-elkergetettPostás sorrendű.
+
+Írjunk Szamar osztályt, ami a HaziAllat leszármazottja. Van egy boolean makacs adattagja, van egy void kocsitHuz() metódusa, amely ha a szamár makacs, akkor 50%-os valószínűséggel azt írja ki, hogy "Megmakacsolta magát.", egyébként, hogy "Kocsit húz.". Ha nem makacs, akkor mindenképp azt írja ki, hogy "Kocsit húz.". (A kiírt szövegek után pont van és a sorok után soremelést is tesz). A String hang() metódus "Iá" értékkel tér vissza, a String bemutatkozas() eredménye: "Hisztéria, a(z) 3 éves makacs szamár", ahol a Hisztéria a nev, 3 a kor, a "nem makacs" vagy "makacs" attól függ, hogy a makacs adattag értéke mi. Konstruktora név-kor-makacsság sorrendű. A makacs adattagra vonatkozó getter neve isMakacs!
+
+Működjön az alábbi kódrészlettel:
+
+Allat[] allatkert = new Allat[3];
+allatkert[0] = new Tigris(3);
+allatkert[1] = new Kutya("Blöki", 3, 12);
+allatkert[2] = new Szamar("Samantha", 1, false);
+for (Allat a : allatkert) {
+   System.out.println(a.bemutatkozas());
+   System.out.println(a.hang());
+}
+HaziAllat[] haziak = new HaziAllat[2];
+haziak[0] = (HaziAllat)allatkert[1];
+haziak[1] = (HaziAllat)allatkert[2];
+for (HaziAllat h : haziak) {
+    System.out.println(h.getNev());
+}
+Tigris tigrincs = new Tigris(5);
+tigrincs.megol(allatkert[0]);
+tigrincs.megol(allatkert[1]);
+tigrincs.megol(allatkert[2]);

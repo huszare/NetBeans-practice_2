@@ -25,11 +25,14 @@ public class Tigris extends Allat{
     }
     
     public void megol(Allat preda){
-        
-
-    //System.out.println("A(z) 3 éves tigris megölte Samantha, a(z) 1 éves nem makacs szamár-t");
+        String szamar = preda.bemutatkozas();
+        System.out.println("A(z) " + kor + " éves tigris megölte " + szamar + "-t.");
         
     }
+    public String hang(){
+        String hang = "Grrr";
+        return hang;
+}
 }
     
 

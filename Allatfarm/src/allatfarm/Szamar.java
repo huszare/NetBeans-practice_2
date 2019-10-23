@@ -5,12 +5,14 @@
  */
 package allatfarm;
 
+import java.util.Random;
+
 /**
  *
  * @author
  */
 public class Szamar extends HaziAllat{
-    protected boolean makacs;
+    private boolean makacs;
     
     public Szamar(){
         
@@ -23,7 +25,7 @@ public class Szamar extends HaziAllat{
     
     public String bemutatkozas() {
         String makacs = new String();
-        if (getMakacs())
+        if (isMakacs())
             makacs = "makacs";
         else
             makacs = "nem makacs";
@@ -32,7 +34,25 @@ public class Szamar extends HaziAllat{
         return valasz;
     }
     
-    public boolean getMakacs() {
+    public void kocsitHuz(){
+         if (isMakacs()){
+            Random generator = new Random(); 
+             int makacs = generator.nextInt(2)+1;
+             if (makacs == 1)
+                System.out.println("Megmakacsolta magát.");
+             else
+                System.out.println("Kocsit húz.");   
+         }
+        else
+            System.out.println("Kocsit húz.");
+       }
+  
+    public String hang(){
+        String hang = "Iá";
+        return hang;
+    }
+    
+    public boolean isMakacs() {
         return makacs;
     }
 

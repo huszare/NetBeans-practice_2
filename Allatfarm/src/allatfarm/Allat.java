@@ -35,7 +35,7 @@ public class Allat {
         return kor;
     }
 
-    public void setKor(String nev) {
+    public void setKor(int kor) {
         this.kor = kor;
     }
 }

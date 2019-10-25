@@ -15,14 +15,41 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       Dokumentum teszt = new Dokumentum();
-       teszt.szoveg = "0123456789kati56789\n0123456789zoli56789\n0123456789feri56789\n";
+       //Dokumentum teszt = new Dokumentum();
+       SzerkeszthetoDokumentum teszt = new SzerkeszthetoDokumentum();
+       //teszt.szoveg = "0123456789kati56789\n0123456789zoli56789\n0123456789feri56789\n";
+       //teszt.szoveg = "Lorem ipsum dolor sit amet,\n" + "est an modus semper convenire.\n" + "Recteque scriptorem mea te,\n" + "eruditi vituperata mediocritatem est cu.";
+       teszt.szoveg = "buokckrb lfgqni ncsmq\n" + "zmnyrbs ftu ejo\n";
        System.out.println(teszt.getSzoveg());
        System.out.println("hossz:" + teszt.getHossz());
        System.out.println("sor:" + teszt.getSorokSzama());
-       System.out.println("sor:" + teszt.getSor(0));
-       
-       
+       System.out.println("sor:" + teszt.getSor(3));
+       System.out.println("beszur xxxx zoli elé: ");
+       teszt.beszur( 30, "xxxx");
+       System.out.println("töröl xxxx");
+       teszt.torol( 30, 4);
+       System.out.println("töröl zoli");
+       teszt.torol( 30, 4);
+       System.out.println("vissza zoli: ");
+       teszt.beszur( 30, "zoli");
+       System.out.println("cserél feri: ");
+       teszt.cserel( 50, 4, "liza");
+       System.out.println("hozzáfűz feri: ");
+       teszt.hozzafuz( "feri");
+       SzerkeszthetoDokumentum teszt3 = new SzerkeszthetoDokumentum();
+       teszt3.szoveg = "Lorem ipsum dolor sit amet,\n" + "est an modus semper convenire.\n" + "Recteque scriptorem mea te,\n" + "eruditi vituperata mediocritatem est cu."; 
+       System.out.println("beszúr sor" );
+        teszt3.sorBeszur(4, "iuglgliugliug");       
+       SzerkeszthetoDokumentum teszt2 = new SzerkeszthetoDokumentum();
+      // System.out.println(" 1 sor töröl");
+     teszt2.szoveg = "0123456789kati56789\n0123456789zoli56789\n0123456789feri56789\n";
+     teszt2.sorTorol( 1);
+      teszt2.szerkeszthetoValtozat();
+       SzerkeszthetoDokumentum teszt4 = new SzerkeszthetoDokumentum();
+       teszt4.szoveg = "hazikcic aqauycys ocnvq\n" +"qtpb itwqzpp zgn\n" +"yxsjpp uqtlkhwe\n" +"vmhzwf xxadbnv";
+      System.out.println("sor:" + teszt4.getSorokSzama());
+      SzerkeszthetoDokumentum teszt5 = new SzerkeszthetoDokumentum();
+      
     }
     
 }

@@ -9,7 +9,7 @@ package allatfarm;
  *
  * @author
  */
-public class HaziAllat extends Allat{
+public abstract class HaziAllat extends Allat{
     protected String nev;
     
     public HaziAllat(){

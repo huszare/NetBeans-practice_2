@@ -22,12 +22,13 @@ public class Main {
        teszt.szoveg = "buokckrb lfgqni ncsmq\n" + "zmnyrbs ftu ejo\n";
        System.out.println(teszt.getSzoveg());
        System.out.println("hossz:" + teszt.getHossz());
+        System.out.println("last n" + teszt.szoveg.lastIndexOf("\n"));
        System.out.println("sor:" + teszt.getSorokSzama());
-       System.out.println("sor:" + teszt.getSor(3));
+       System.out.println("sor:" + teszt.getSor(1));
        System.out.println("beszur xxxx zoli elé: ");
        teszt.beszur( 30, "xxxx");
        System.out.println("töröl xxxx");
-       teszt.torol( 30, 4);
+       teszt.torol( 0, 4);
        System.out.println("töröl zoli");
        teszt.torol( 30, 4);
        System.out.println("vissza zoli: ");
@@ -43,12 +44,14 @@ public class Main {
        SzerkeszthetoDokumentum teszt2 = new SzerkeszthetoDokumentum();
       // System.out.println(" 1 sor töröl");
      teszt2.szoveg = "0123456789kati56789\n0123456789zoli56789\n0123456789feri56789\n";
-     teszt2.sorTorol( 1);
+     teszt2.sorTorol( 0);
       teszt2.szerkeszthetoValtozat();
        SzerkeszthetoDokumentum teszt4 = new SzerkeszthetoDokumentum();
        teszt4.szoveg = "hazikcic aqauycys ocnvq\n" +"qtpb itwqzpp zgn\n" +"yxsjpp uqtlkhwe\n" +"vmhzwf xxadbnv";
       System.out.println("sor:" + teszt4.getSorokSzama());
       SzerkeszthetoDokumentum teszt5 = new SzerkeszthetoDokumentum();
+      teszt4.szoveg = "yrzt mbbmtv hkvgrvtb xec wnse\n" + "yapiuwn egi xdtwv syp nswvuj\n" + "lxlzfi ihwk";
+      teszt5.szerkeszthetoValtozat();
       
     }
     

@@ -9,27 +9,25 @@ package allatfarm;
  *
  * @author
  */
-public class Allat {
+public abstract class Allat {
     protected int kor;
-    //protected String allat;
-    //protected String hang;
-    
+       
     public Allat(){
     }
     
     public Allat(int kor){
         this.kor = kor;
     }
-    public String hang(){
-        String valasz = "milyen hangot?";
-        return valasz; 
+    public abstract String hang();
+        //String valasz = "milyen hangot?";
+        //return valasz; 
             
-    }
     
-    public String bemutatkozas(){
-        String valasz = "milyen állat?";
-        return valasz; 
-       }
+    
+    public abstract String bemutatkozas();
+        //String valasz = "milyen állat?";
+        //return valasz; 
+       
     
      public int getKor() {
         return kor;

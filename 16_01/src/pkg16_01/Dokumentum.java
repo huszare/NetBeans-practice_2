@@ -22,9 +22,8 @@ public class Dokumentum {
         } else {
             this.szoveg = szoveg;
         }
-        
+
     }
-   
 
     public void setSzoveg(String szoveg) {
         this.szoveg = szoveg;
@@ -45,13 +44,12 @@ public class Dokumentum {
             if (szoveg.substring(i, i + 1).equals("\n")) {
                 sor++;
             }
-           }
-       // System.out.println(szoveg.lastIndexOf("\n"));
-       // System.out.println((szoveg.length() -1));
-                if (szoveg.lastIndexOf("\n") == (szoveg.length() - 1))
-                return sor;
-            else
-                return (sor + 1);
+        }
+        if (szoveg.lastIndexOf("\n") == (szoveg.length() - 1)) {
+            return sor;
+        } else {
+            return (sor + 1);
+        }
     }
 
     public String getSor(int sorIndex) {
@@ -62,9 +60,10 @@ public class Dokumentum {
             sor = szoveg.substring(0, szoveg.indexOf("\n"));
             return sor;
         }
-        if (sorIndex == maxSor -1) {
+        if (sorIndex == maxSor - 1) {
+            if (szoveg.lastIndexOf("\n") + 1 != szoveg.length()){
             sor = szoveg.substring((szoveg.lastIndexOf("\n") + 1));
-            return sor;
+            return sor;}
         }
         if (sorIndex >= maxSor) {
             return sor;
@@ -72,27 +71,26 @@ public class Dokumentum {
         String keres = szoveg.substring((szoveg.indexOf("\n") + 1));
         boolean meddig = true;
         int i = 0;
-        while (meddig){
-            if (keres.substring(i, i + 1).equals("\n")){
-                if (aktSor == sorIndex){
+        while (meddig) {
+            if (keres.substring(i, i + 1).equals("\n")) {
+                if (aktSor == sorIndex) {
                     sor = keres.substring(0, keres.indexOf("\n"));
-                    return sor;}
-                else {
-                    keres = keres.substring(keres.indexOf("\n") + 1); 
+                    return sor;
+                } else {
+                    keres = keres.substring(keres.indexOf("\n") + 1);
                     aktSor++;
                     i = 0;
+                }
             }
-        }
             i++;
-            
+
         }
         return sor;
     }
 
     public SzerkeszthetoDokumentum szerkeszthetoValtozat() {
         SzerkeszthetoDokumentum SzerkeszthetoDokumentum = new SzerkeszthetoDokumentum();
-        this.szoveg = szoveg;
-        //SzerkeszthetoDokumentum.szoveg = "";
+        SzerkeszthetoDokumentum.szoveg = getSzoveg();
         return SzerkeszthetoDokumentum;
     }
 }

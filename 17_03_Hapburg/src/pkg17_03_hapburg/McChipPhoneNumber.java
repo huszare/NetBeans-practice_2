@@ -14,9 +14,17 @@ public class McChipPhoneNumber extends PhoneNumber{
     public String number;
     
     public int price(int perc, int mp){
-        int cost = 15 + perc *60;
-        if (mp < 0)
-            cost += 60;
+        if (perc < 0)
+             return -1;
+        if ((mp < 0 || mp > 59))
+            return -1;
+        int cost = 0;
+        if (perc > 0)
+            cost = perc *60;
+        if (mp > 0)
+            cost = cost + 60;
+        if (cost > 0)
+            cost = cost + 15;
         return cost;
     }
     

@@ -14,6 +14,10 @@ public class IkiPhoneNumber extends PhoneNumber{
     public String number;
  
     public int price(int perc, int mp){
+        if (perc < 0)
+             return -1;
+        if ((mp < 0 || mp > 59))
+            return -1;
         int cost = 0;
         int tarifa = 0;
         for (int i = 1; i < (perc + 1); i++){
